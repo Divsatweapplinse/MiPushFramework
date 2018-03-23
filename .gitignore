@@ -8,5 +8,5 @@
 /captures
 .externalNativeBuild
 .idea/
-.yuuta.jks
-gradle.properties
+*.jks
+local.properties
