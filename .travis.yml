@@ -10,8 +10,7 @@ script:
 - "./gradlew :push:assembleRelease"
 before_install:
 - yes | sdkmanager "platforms;android-27"
-- openssl aes-256-cbc -K $encrypted_66a7d5f7594e_key -iv $encrypted_66a7d5f7594e_iv
-  -in .yuuta.jks.enc -out .yuuta.jks -d
+- openssl aes-256-cbc -K $encrypted_9351aabe1378_key -iv $encrypted_9351aabe1378_iv -in android.jks.enc -out android.jks -d
 - chmod +x gradlew
 before_deploy:
   - export VERSION=$(git rev-parse --short HEAD)"-SNAPSHOT"
@@ -25,7 +24,7 @@ deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: G+LeoslAG/JLv5PsxNoH5jYr8gXhD8SzHAMhnXGkPy6CNPq3CHhyYTh5AKIbQyI9596KeNZSCBcUFRw2HvDC5BBnB7uKNmxGlPKLNRH+AEuF1ZkNlOc7Q2lYhuArbMeiZw2Tz3RL5/5HJYZ2LPwaDRxeB7HipqSfDXN+6W65qW6TTGO5ykZLLLUVsq+xBB1tzlxB4XLy5ac71lJ3z8uBJ9y3CnUQFicY9w5gV9BPxf217B4H8FcBloIF0z1I/qnZZX1WsLYqa3yrsNqeExmeP/ZT6gEqvAi46oJvaSPrOhcmoFzbobkxWXxrvEPsm2F4MwxugbcNUwCn1nm030/3ta2jIP68t8dmcV+uNtILCiv8BxBJyiZGr+ENsZ2nKluq4B50fBLrHv33dpnyYezMwE2+v9C5OBELe5R1ShfqXaxvnf3fZjSMT/lv/+m7g7JOGPtaHm6wlltgBK8vV4sYcH8mJvGeAaiXqFk3JVWMaRuVsIw5uWPWY2jPvgJ25ddlJ2Z1+2eJEtsw8RZZ785HgSfBKEwHDDNlG85/Yqr501Xjw4SzeN/3CalbVWGrVPa+s/wc5cjCFNe60NAcDaMdfc7P3HQe+E+5ij0rOTXwBd4HlPXNsFA8iDGGHqgLoWk/CyrtTnN8s7CzllaaSyWPG7bLLDaigMDJ8fzDL4Qmrp8=
+      secure: CMoA921jLv10Xivl/YGKs2ziJeSaCWRRM1zUuhr6r+5+vftbJ7wnrVzDJxGbEAglwB5bUcLFN+fQwa+ga5SWi7VtHwjP4noXvtSjvM+xuQhBpKJBIaV4tBKYJOlkFpHo0AiNEOKysO70dHsj1fXIhAIgSkHKPtTiUoVeR1DvmVe0kNfXmVXgzX6noz58iP7lKimVYn2ckgYa/JMfb1qS789d/ZvjVPXDnbzR2J/LVIrc2CVIgn7fWSWG6ib6LP7rKlr4/Z9rREd4W4X1+nsm6wY6oRfRbZz+2+8b+2V4pQGKtwZunee6OsLFqzoR7BwzzqAJVPmc+WM2IiElh/dLbPgST/RTTmjlolRRH2Frv/3E/llGNzyUchn1rFbkwgVRJlXapYV39zc2WHsN06UTjoKsOZXzol6WR2Xt59LSONTxJeOu2aEKkbdiPr2S6w2Oa8SNoE+xsMG5y5nqt2J8+zWp5gaAnxSzmSHWn4+nTDiegWWTWhOCfaHPbcnESs0XMal6QrnktvVucHgV8Dtsnh4o2Nn1b25jNe+y1J6MYb1m44gr2H+R3eq5tFl/oxBhZsB//FEJfHpi7Il4QOkT59H1Iode6HZUdiJ9tfxbsFd9IiTms+1JQVJTLF3EnuwUx0qJMsPXO7XmMYfsH+zcGPmVC3lKroZ/QMG6MD1Xcw8=
   file:
     - "app/build/outputs/apk/release/manager.apk"
     - "push/build/outputs/apk/release/xmsf_service.apk"

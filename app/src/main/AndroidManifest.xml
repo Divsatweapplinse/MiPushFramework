@@ -55,8 +55,5 @@
             android:label="@string/helplib_title"
             android:theme="@style/HelpTheme.DayNight" />
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="${fabricKey}" />
     </application>
 </manifest>
